@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="skyblue">#00BCD4</color>
-    <color name="btn">#FFEB3B</color>d
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#005748</color>
+    <color name="colorAccent">#D81B68</color>
+    <color name="frankeey">#FF5722</color>
+    <color name="backgroundColor">#00BCD4</color>
+    <color name="buttonColor">#FF9800</color>
 </resources>

@@ -7,5 +7,15 @@
 
     <style name="Theme.FirstApp" parent="Base.Theme.FirstApp" />
 
+    <style name="Title">
+        <item name="android:textSize">50dp</item>
+        <item name="android:background">@color/frankeey</item>
+    </style>
+    <style name="Newstyle" parent="Title">
+        <item name="android:textSize">80dp</item>
+    </style>
+    <style name="Newstyle.Title">
+
+    </style>
 
 </resources>
