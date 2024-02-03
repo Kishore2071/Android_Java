@@ -3,6 +3,7 @@ package com.example.firstapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,7 +12,7 @@ import android.widget.Toast;
 
 import java.util.regex.Pattern;
 
-public class MainActivity extends AppCompatActivity {
+public class SignUpActivity extends AppCompatActivity {
     EditText emailTxt,passwordTxt,confirmPasswordTxt;
     TextView errorTxt,successTxt;
     Button signUpButton;
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
                 String confirmPass = confirmPasswordTxt.getText().toString();
 
                 if(validEmail(email) & validPassword(pass) & validConfirmPassword(pass,confirmPass)){
-                    Toast.makeText(MainActivity.this, "Success", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignUpActivity.this, "Success", Toast.LENGTH_SHORT).show();
                     resetError();
                 }
                 else{
@@ -44,6 +45,36 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        Log.i("Lifecycle","onCreate()");
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.i("Lifecycle","onStart()");
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.i("Lifecycle","onResume()");
+
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.i("Lifecycle","onPause()");
+
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.i("Lifecycle","onStop()");
 
     }
 
@@ -63,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
         errorTxt.setVisibility(View.VISIBLE);
         errorTxt.setText(errormsg);
     }
+
     private void resetError(){
         errorTxt.setVisibility(View.INVISIBLE);
         errorTxt.setText("");
