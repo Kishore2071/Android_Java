@@ -1,6 +1,7 @@
 package com.example.recyclercard;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
@@ -18,12 +19,23 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ArrayList<Instagram> data = new ArrayList<>();
+        ArrayList<Instagram> instagramList = new ArrayList<>();
 
-        data.add(new Instagram(R.drawable.slide1, "First Pic"));
-        data.add(new Instagram(R.drawable.slide2, "Second Pic"));
-        data.add(new Instagram(R.drawable.slide3, "Third Pic"));
-        data.add(new Instagram(R.drawable.slide4, "Fourth Pic"));
+        instagramList.add(new Instagram(R.drawable.slide1, "First Pic"));
+        instagramList.add(new Instagram(R.drawable.slide2, "Second Pic"));
+        instagramList.add(new Instagram(R.drawable.slide3, "Third Pic"));
+        instagramList.add(new Instagram(R.drawable.slide4, "Fourth Pic"));
+
+        //Config RV
+        recyclerView = findViewById(R.id.RecyclerCard);
+        //Performance
+        recyclerView.setHasFixedSize(true);
+
+        layoutManager = new LinearLayoutManager(this);
+        adapter = new InstagramAdapter(instagramList);
+
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(adapter);
 
     }
 }
